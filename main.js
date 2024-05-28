@@ -1,15 +1,23 @@
 // try solve your kata here
 
-function firstNonRepeatingLetter(str) {
-  return str.split('').filter((v,i,arr) => arr.indexOf(v) === arr.lastIndexOf(v))[0] || '';
-}
+
+
 
 function firstNonRepeatingLetter(str) {
-  return str.replace(/([a-z])(?=.*\1)/ig, '').split('').filter((v,i,arr) => arr.indexOf(v) === arr.lastIndexOf(v))[0] || '';
+  return str.toLowerCase().split('').filter((v,i,arr) => arr.indexOf(v) === arr.lastIndexOf(v))[0] || '';
 }
 
 
-let data = 'stress';
+function firstNonRepeatingLetter(str) {
+  let i = 0, arr = str.toLowerCase().split('');
+  while (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) ++i
+  return str[i] || '';
+}
+
+
+
+
+let data = 'sTreSS';
 
 result = firstNonRepeatingLetter(data);
 
