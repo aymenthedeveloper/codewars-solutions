@@ -1,13 +1,16 @@
 // try solve your kata here
 
-
-function isPalindrom(word) {
-  return word === word.split('').reduce((word, curr) => curr + word, '')
+function firstNonRepeatingLetter(str) {
+  return str.split('').filter((v,i,arr) => arr.indexOf(v) === arr.lastIndexOf(v))[0] || '';
 }
 
-data = 'aba';
+function firstNonRepeatingLetter(str) {
+  return str.replace(/([a-z])(?=.*\1)/ig, '').split('').filter((v,i,arr) => arr.indexOf(v) === arr.lastIndexOf(v))[0] || '';
+}
 
-result = isPalindrom(data);
 
+let data = 'stress';
+
+result = firstNonRepeatingLetter(data);
 
 console.log(result);
