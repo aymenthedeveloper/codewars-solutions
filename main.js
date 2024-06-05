@@ -9,18 +9,15 @@ function firstNonRepeatingLetter(str) {
 }
 
 
-function orderWeight(list) {
-  const weight = w => w.split('').reduce((a,b) => a + (+b),0);
-  return list.split(' ').sort((a,b) => {
-    let i = weight(a), j = weight(b);
-    return i===j? a.localeCompare(b): i-j;
-  }).join(' ');
+
+function domainName(url){
+  const pattern = /^((https?:\/\/)?(www\.)?([a-z0-9-]+)(\..+))$/i;
+  return url.replace(pattern, '$4');
 }
 
 
-let data = "202 103 4444 99 2000";
+let data = "https://r7euthhsx6e1nojs2ln3-0xhkkrah.tv/users";
 
-result = orderWeight(data);
+result = domainName(data);
 
 console.log(result);
-console.log('23'.localeCompare('11'))
